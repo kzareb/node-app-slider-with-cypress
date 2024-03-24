@@ -16,3 +16,20 @@ describe('Swiper Gallery Test', function () {
     cy.get('.swiper-slide-active').should('contain', 'Paris');
   });
 });
+
+describe('Swiper Gallery Test', function () {
+  it('Checks if description is correct', function () {
+    cy.visit('http://localhost:3000');
+    cy.get('.swiper-slide-active').should('contain', 'Italy');
+    cy.get('.swiper-slide-active').should('contain', 'Rome');
+    cy.get('.swiper-button-next').click();
+    cy.wait(1000);
+    cy.get('.swiper-slide-active').should('contain', 'London');
+    cy.get('.swiper-slide-active').should('contain', 'United Kingdom');
+    cy.get('.swiper-button-next').click();
+    cy.wait(1000);
+    cy.get('.swiper-slide-active').should('contain', 'Paris');
+    cy.get('.swiper-slide-active').should('contain', 'France');
+  });
+});
+
